@@ -1,19 +1,17 @@
 <div class='container'>
-  <form method="post" action="/users">
-    Name:<br>
-    <input type="text" name="name">
-    <br>
-
-    Email:<br>
-    <input type="text" name="email">
-    <br>
-    Password:<br>
-    <input type="password" name="password">
-
-    <br>
-    <input type="submit">
-
-    <br>
-    <br>
-  </form>
+  <form role='form' method="post" action="/users">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" class="form-control" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" name="email" class="form-control" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" name="password" class="form-control" placeholder="Password">
+    </div>
+    <input type="submit" class="btn btn-primary">
+</form>
 </div>
