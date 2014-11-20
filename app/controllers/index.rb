@@ -30,10 +30,26 @@ post '/users' do
     end
 end
 
+#logs out user clear session
+get '/logout' do
+  session.clear
+  redirect '/sessions/new'
+end
+
 # ********************************
 
 get '/twits' do
-
   redirect 'users/new' unless session[:user_id]
+
+  @all_twits = Twit.all
+  @all_users = User.all
   erb :twits_feed
 end
+
+post '/twits' do
+  twit = Twit.new(message: params[:message], user_id: session[:user_id])
+  twit.save
+
+  redirect '/twits'
+end
+
