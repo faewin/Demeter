@@ -1,1 +1,25 @@
-: ))))
+<div class='container'>
+  <form method="get" action="/logout">
+    <button type="submit">Logout</button>
+  </form>
+
+  <h2> Twit feed </h2>
+  <form method="post" action="/twits">
+    Twit:<br>
+    <input type="text" name="message">
+
+    <input type="submit" value="Twit">
+  </form>
+  <br>
+
+  <% @all_twits.reverse_each do |twit| %>
+  USER:
+  <%= @all_users.find(twit.user_id).name %>
+  <br>
+
+  TWIT:
+  <%= twit.message %>
+  <br>
+  <br>
+  <%end  %>
+</div>
