@@ -48,8 +48,18 @@ end
 
 post '/twits' do
   twit = Twit.new(message: params[:message], user_id: session[:user_id])
-  twit.save
-
-  redirect '/twits'
+  if twit.save
+    redirect '/twits'
+  else
+    flash[:error] = "Message needs to be less than 140 chars, fool!"
+    redirect '/twits'
+  end
 end
 
+# ***********************************
+
+get "/profile/:user_id" do
+  @user_twits = Twit.where(user_id: params[:user_id])
+  @user_info = User.find_by(id: params[:user_id])
+  erb :profile_page
+end

@@ -3,6 +3,10 @@
     <button type="submit">Logout</button>
   </form>
 
+  <form method="get" action="/profile/<%= session[:user_id] %>">
+    <button type="submit">Profile Page</button>
+  </form>
+
   <h2> Twit feed </h2>
   <form method="post" action="/twits">
     Twit:<br>
@@ -10,16 +14,21 @@
 
     <input type="submit" value="Twit">
   </form>
-  <br>
 
-  <% @all_twits.reverse_each do |twit| %>
-  USER:
-  <%= @all_users.find(twit.user_id).name %>
-  <br>
+  <% if flash[:error] %>
+  <p class="notice"><%= flash[:error] %></p>
+    <% end %>
 
-  TWIT:
-  <%= twit.message %>
-  <br>
-  <br>
-  <%end  %>
-</div>
+    <br>
+
+    <% @all_twits.reverse_each do |twit| %>
+    USER:
+    <a href="/profile/<%= @all_users.find(twit.user_id).id %>"><%= @all_users.find(twit.user_id).name %></a>
+    <br>
+
+    TWIT:
+    <%= twit.message %>
+    <br>
+    <br>
+    <%end  %>
+  </div>
