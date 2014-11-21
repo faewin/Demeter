@@ -5,12 +5,11 @@
   </form>
 
   <form method="get" action="/profile/<%= session[:user_id] %>">
-    <button type="submit">Profile Page</button>
+    <input type="submit" class="btn btn-primary" >Profile Page</button>
   </form>
 
   <form method="post" action="/twits">
     <input class="form-control input-lg"  type="text" name="message"></textarea>
-    <br>
     <input type="submit" class="btn btn-primary btn-lg" value="TWIT">
   </form>
 
@@ -22,12 +21,9 @@
     <br>
 
     <% @all_twits.reverse_each do |twit| %>
-    USER:
     <a href="/profile/<%= @all_users.find(twit.user_id).id %>"><%= @all_users.find(twit.user_id).name %></a>
     <br>
-
-    TWIT:
-    <%= twit.message %>
+    <blockquote><%= twit.message %></blockquote>
     <br>
     <br>
     <%end  %>
