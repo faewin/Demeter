@@ -23,7 +23,7 @@
 
     <% @all_twits.reverse_each do |twit| %>
 
-    <img src="<%= gravatar_for(@all_users.find(twit.user_id)) %>">
+    <img src="<%= gravatar_url(@all_users.find(twit.user_id)) %>">
     USER:
     <a href="/profile/<%= @all_users.find(twit.user_id).id %>"><%= @all_users.find(twit.user_id).name %></a>
     <br>

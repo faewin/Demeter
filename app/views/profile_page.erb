@@ -1,6 +1,11 @@
 <div class='container'>
   <%= @user_info.name %>
   <br>
+  <img src="<%= gravatar_url(@user_info.id) %>">
+
+  <form method="post" action="/follow">
+    <button type="submit">Follow</button>
+  </form>
 
   <% @user_twits.each do |twit| %>
     TWIT:
