@@ -21,7 +21,9 @@ require 'sinatra'
 require 'sinatra/flash'
 require "sinatra/reloader" if development?
 
+require 'gravatar-api'
 require 'erb'
+require 'pry'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))

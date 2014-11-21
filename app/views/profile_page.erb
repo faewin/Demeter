@@ -1,10 +1,24 @@
 <div class='container'>
   <%= @user_info.name %>
   <br>
+  <img src="<%= gravatar_url(@user_info) %>">
+
+  <p>Following:<%= @user_info.following.count %></p>
+  <p>Followers:<%= @user_info.followers.count %></p>
+
+  <form method="post" action="/follow/<%= @user_info.id %>">
+    <button type="submit">Follow</button>
+  </form>
+
+  <% if flash[:error] %>
+  <p class="notice"><%= flash[:error] %></p>
+    <% end %>
 
   <% @user_twits.each do |twit| %>
     TWIT:
     <%= twit.message %>
     <br>
     <%end  %>
+
+  <a href="/twits">Twit Feed</a>
 <div>
