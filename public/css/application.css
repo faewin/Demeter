@@ -1,3 +1,46 @@
 .notice {
   color: red;
 }
+.card {
+  border-radius: 8px;
+  border-style: outset;
+  border-color: #7EA1E3;
+  background-color: #DFF2FF;
+  padding: 5%;
+  padding-bottom: 7%;
+  margin-bottom: 3%;
+}
+
+.card h2{
+  padding: 3%;
+  font-size: 4em;
+  text-align: center;
+}
+
+.card h1{
+  padding-bottom: .5%;
+  font-size: 1em;
+  text-align: center;
+}
+
+.card blockquote {
+  font-size: 2em;
+}
+
+body {
+  background: #0F1221;
+}
+
+.navbar {
+  background: #5672A2;
+  margin-bottom: 5%;
+  padding: 2%;
+  border-style: outset;
+  border-radius: 8px;
+  border-color: #303F5E;
+  text-align: left;
+}
+
+.twit-button {
+  float: right 3px;
+}
