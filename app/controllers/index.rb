@@ -51,7 +51,7 @@ post '/twits' do
   if twit.save
     redirect '/twits'
   else
-    flash[:error] = "Message needs to be less than 140 chars, fool!"
+    flash[:error] = "Message needs to be less than 140 chars and more than 1 char"
     redirect '/twits'
   end
 end
@@ -62,4 +62,18 @@ get "/profile/:user_id" do
   @user_twits = Twit.where(user_id: params[:user_id])
   @user_info = User.find_by(id: params[:user_id])
   erb :profile_page
+end
+
+# ***********************************
+
+post '/follow/:profile_id' do
+
+  if Following.where(follower_id: session[:user_id] ,followed_id: params[:profile_id]) != nil
+    flash[:error] = "You're already are following this user"
+
+    redirect "/profile/#{params[:profile_id]}"
+  else
+    Following.create(follower_id: session[:user_id] ,followed_id: params[:profile_id])
+    redirect "/profile/#{params[:profile_id]}"
+  end
 end

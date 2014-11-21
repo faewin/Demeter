@@ -18,6 +18,9 @@ gem 'faker'
 gem 'shotgun'
 gem 'bcrypt'
 
+gem 'gravatar-api'
+gem 'pry'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
