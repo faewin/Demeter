@@ -1,0 +1,10 @@
+<div class='container'>
+  <%= @user_info.name %>
+  <br>
+
+  <% @user_twits.each do |twit| %>
+    TWIT:
+    <%= twit.message %>
+    <br>
+    <%end  %>
+<div>
