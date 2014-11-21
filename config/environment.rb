@@ -18,6 +18,7 @@ require 'logger'
 require 'faker'
 
 require 'sinatra'
+require 'sinatra/flash'
 require "sinatra/reloader" if development?
 
 require 'erb'
