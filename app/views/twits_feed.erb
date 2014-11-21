@@ -24,7 +24,10 @@
   <br>
   <% @all_twits.reverse_each do |twit| %>
   <div class="card">
-    <a href="/profile/<%= @all_users.find(twit.user_id).id %>"><%= @all_users.find(twit.user_id).name %></a>
+    <div class="username">
+    <a href="/profile/<%= @all_users.find(twit.user_id).id %>"><%= @all_users.find(twit.user_id).name %>
+    </div>
+    </a>
     <br>
     <blockquote><%= twit.message %></blockquote>
     <br>
