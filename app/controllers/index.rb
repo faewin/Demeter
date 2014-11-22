@@ -24,6 +24,7 @@ end
 post '/users' do
   @user = User.new(name: params[:name], email: params[:email], password: params[:password])
     if @user.save
+      pony(params[:email])
       redirect '/sessions/new' #redirect to twitter feed
     else
       redirect '/user/new'
