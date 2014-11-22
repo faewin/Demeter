@@ -1,33 +1,37 @@
 <div class='container'>
-<nav class="navbar navbar-default" role="navigation">
-
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="logo"><img src='http://i.imgur.com/ctbutdQ.png?1'></div>
+    <form method="get" action="/twits">
+      <input type="submit" class="btn btn-primary" value="twits">
+    </form>
     <form method="get" action="/profile/<%= session[:user_id] %>">
       <input type="submit" class="btn btn-primary" value="profile">
     </form>
     <form method="get" action="/logout">
-      <button type="submit" class="btn btn-default">Logout</button>
+      <input type="submit" class="btn btn-default" value="logout">
     </form>
   </nav>
+
   <div class="card">
     <form method="post" action="/twits">
       <textarea class="form-control input-lg"  type="text" name="message"></textarea>
-    <div class="twit-button">
-      <input type="submit" class="btn btn-primary btn-lg" value="TWIT">
-    </div>
+      <div class="twit-button">
+        <input type="submit" class="btn btn-primary btn-lg" value="TWIT">
+      </div>
     </form>
-  </div>
 
-  <% if flash[:error] %>
-  <p class="notice"><%= flash[:error] %></p>
-  <% end %>
+    <% if flash[:error] %>
+    <p class="notice"><%= flash[:error] %></p>
+    <% end %>
+  </div>
 
   <br>
   <% @all_twits.reverse_each do |twit| %>
   <div class="card">
-        <img src="<%= gravatar_url(@all_users.find(twit.user_id)) %>">
+    <img class="avatar" src="<%= gravatar_url(@all_users.find(twit.user_id)) %>">
     <div class="username">
-    <a href="/profile/<%= @all_users.find(twit.user_id).id %>"><%= @all_users.find(twit.user_id).name %>
-    </div>
+      <a href="/profile/<%= @all_users.find(twit.user_id).id %>"><%= @all_users.find(twit.user_id).name %>
+      </div>
     </a>
     <br>
     <blockquote><%= twit.message %></blockquote>

@@ -10,6 +10,7 @@
   padding: 5%;
   padding-bottom: 7%;
   margin-bottom: 3%;
+  opacity: 0.9;
 }
 
 .card h2{
@@ -36,6 +37,12 @@ label {
   width: 90%;
 }
 
+.avatar {
+  border-radius: 8px;
+  border-color: #5672A2;
+  border-width: 1px;
+  border-style: solid;
+}
 
 .card blockquote {
   font-size: 2em;
@@ -46,19 +53,44 @@ label {
   font-family: 'Rubik Mono One', sans-serif;
 }
 
+.card .follows {
+   font-family: 'Rajdhani', sans-serif;
+   font-size: 2em;
+   padding: 1%;
+}
+
+.twit-button {
+  text-align: center;
+  margin-top: 5%;
+}
 
 body {
   background: #0F1221;
+  background: url("http://sabbathian.files.wordpress.com/2011/10/fallout-3-04.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.profile {
+  font-size: 3em;
 }
 
 .navbar {
   background: #5672A2;
   margin-bottom: 5%;
   padding: 2%;
+  border-color: #7EA1E3;
+  border-width: 3px;
   border-style: outset;
   border-radius: 8px;
-  border-color: #303F5E;
-  text-align: left;
+  text-align: center;
+}
+
+.navbar form {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: inline;
 }
 
 .twit-button {

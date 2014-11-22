@@ -1,24 +1,37 @@
 <div class='container'>
-  <%= @user_info.name %>
-  <br>
-  <img src="<%= gravatar_url(@user_info) %>">
+ <nav class="navbar navbar-default" role="navigation">
+    <div class="logo"><img src='http://i.imgur.com/ctbutdQ.png?1'></div>
+    <form method="get" action="/twits">
+      <input type="submit" class="btn btn-primary" value="twits">
+    </form>
+    <form method="get" action="/profile/<%= session[:user_id] %>">
+      <input type="submit" class="btn btn-primary" value="profile">
+    </form>
+    <form method="get" action="/logout">
+      <input type="submit" class="btn btn-default" value="logout">
+    </form>
+  </nav>
 
-  <p>Following:<%= @user_info.following.count %></p>
-  <p>Followers:<%= @user_info.followers.count %></p>
+  <div class="card">
+    <div class="username profile"><%= @user_info.name %></div>
+    <br>
+    <img class="avatar profile" src="<%= gravatar_url(@user_info) %>">
 
-  <form method="post" action="/follow/<%= @user_info.id %>">
-    <button type="submit">Follow</button>
-  </form>
+    <p class="follows">Following:<%= @user_info.following.count %></p>
+    <p class="follows">Followers:<%= @user_info.followers.count %></p>
 
-  <% if flash[:error] %>
-  <p class="notice"><%= flash[:error] %></p>
+    <form method="post" action="/follow/<%= @user_info.id %>">
+      <input type="submit" class="btn btn-primary btn-lg" value="follow">
+    </form>
+    <% if flash[:error] %>
+    <p class="notice"><%= flash[:error] %></p>
     <% end %>
+  </div>
 
   <% @user_twits.each do |twit| %>
-    TWIT:
+  <div class="card">
     <%= twit.message %>
-    <br>
-    <%end  %>
-
-  <a href="/twits">Twit Feed</a>
-<div>
+  </div>
+  <br>
+  <%end  %>
+  <div>

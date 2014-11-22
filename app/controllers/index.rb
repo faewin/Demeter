@@ -68,7 +68,7 @@ end
 
 post '/follow/:profile_id' do
 
-  if Following.where(follower_id: session[:user_id] ,followed_id: params[:profile_id]) != nil
+  if Following.where(follower_id: session[:user_id] ,followed_id: params[:profile_id]) != []
     flash[:error] = "You're already are following this user"
 
     redirect "/profile/#{params[:profile_id]}"
