@@ -17,8 +17,8 @@
     <br>
     <img class="avatar profile" src="<%= gravatar_url(@user_info) %>">
 
-    <p class="follows">Following:<%= @user_info.following.count %></p>
-    <p class="follows">Followers:<%= @user_info.followers.count %></p>
+    <p class="follows">Following: <%= @user_info.following.count %></p>
+    <p class="follows">Followers: <%= @user_info.followers.count %></p>
 
     <form method="post" action="/follow/<%= @user_info.id %>">
       <input type="submit" class="btn btn-primary btn-lg" value="follow">
