@@ -18,6 +18,7 @@ gem 'faker'
 gem 'shotgun'
 gem 'bcrypt'
 
+gem 'pony'
 gem 'gravatar-api'
 gem 'pry'
 

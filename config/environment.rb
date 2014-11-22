@@ -21,6 +21,7 @@ require 'sinatra'
 require 'sinatra/flash'
 require "sinatra/reloader" if development?
 
+require 'pony'
 require 'gravatar-api'
 require 'erb'
 require 'pry'
