@@ -1,3 +1,98 @@
+@import url(http://fonts.googleapis.com/css?family=Rajdhani|Rubik+Mono+One);
 .notice {
   color: red;
+}
+.card {
+  border-radius: 8px;
+  border-style: outset;
+  border-color: #7EA1E3;
+  background-color: #DFF2FF;
+  padding: 5%;
+  padding-bottom: 7%;
+  margin-bottom: 3%;
+  opacity: 0.9;
+}
+
+.card h2{
+  padding: 3%;
+  font-size: 1.7em;
+  text-align: center;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.card h1{
+  padding-bottom: .5%;
+  font-size: 1.3em;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+label {
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
+}
+
+.logo img{
+  text-align: center;
+  width: 90%;
+}
+
+.avatar {
+  border-radius: 8px;
+  border-color: #5672A2;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.card blockquote {
+  font-size: 2em;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.username {
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.card .follows {
+   font-family: 'Rajdhani', sans-serif;
+   font-size: 2em;
+   padding: 1%;
+}
+
+.twit-button {
+  text-align: center;
+  margin-top: 5%;
+}
+
+body {
+  background: #0F1221;
+  background: url("http://sabbathian.files.wordpress.com/2011/10/fallout-3-04.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.profile {
+  font-size: 3em;
+}
+
+.navbar {
+  background: #5672A2;
+  margin-bottom: 5%;
+  padding: 2%;
+  border-color: #7EA1E3;
+  border-width: 3px;
+  border-style: outset;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.navbar form {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: inline;
+}
+
+.twit-button {
+  float: right 3px;
 }
